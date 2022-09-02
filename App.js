@@ -1,39 +1,87 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View, Image, Alert } from 'react-native';
+import { Button, StyleSheet, Text, View, Image, Alert, ImageBackground, } from 'react-native';
 
 export default function App() {
 
   return (
-    <View style={styles.container}>
-       <Button style={styles.button} title="Press to detonate" onPress={() => 
-        Alert.alert("Boom!", "Are we all dead now?", [{text: "yep"}, {text: "tis only a flesh wound"}])}/>
-      <Text style={styles.text}>Testing? Can you see me on your phone</Text>
-      <Image source={{
-        height: 200,
-        width: 300,
-        uri: "https://www.treehugger.com/thmb/TxTW3-7EhJ38OJbkm72e0e_xFps=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1273584292-cbcd5f85f4c646d58f7a7fa158dcaaeb.jpg"}}/>
-      <StatusBar style="auto" />
-    </View>
+    
+      <ImageBackground style={styles.backGround}source={{
+        uri: "https://www.we-love-pets.co.uk/hubfs/A05I8719-1.jpg"}}>
+          <View style={styles.logoBox}>
+      <Image style={[styles.container, styles.logo]} source={{uri: "https://images-platform.99static.com/OIRRT4xa5hwUOYh3r9nQoxbDf_w=/0x0:2000x2000/500x500/top/smart/99designs-contests-attachments/101/101748/attachment_101748619"}}/>
+      <Text style={styles.text}>Pet Some Lonely Doggos!</Text>
+          </View>
+          <View
+          style={styles.button}>
+            <Button style={styles.text2} title="Login as Sitter"
+  color="#841584"/>
+        </View> 
+        <View style={styles.button2}>
+        <Button style={styles.text2} title="Login as Pet Owner"
+  color="#841584"/>
+        </View>
+       
+   </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
     alignItems: 'center',
-    justifyContent: 'center',
-    color: 'purple',
-    fontSize: '100px'
+    
+    
   },
   text: {
-    color: 'red',
-    fontSize: 50
+    color: 'darkblue',
+    fontSize: 25,
+    alignItems: "center",
+   
+    top: 90,
+    line: 0
+  },
+
+  text2: {
+    color: 'white',
+    fontSize: 23,
+    alignItems: "center",
+    
+    
   },
 
   button: {
-     backgroundColor: 'white',
-     fontSize: 30,
-     color: 'white'
+    width:"100%",
+    height:50,
+    backgroundColor: "pink",
+    justifyContent: "flex-end"
+  },
+  button2: {
+    width:"100%",
+    height:50,
+   backgroundColor: "#fc5c65",
+    justifyContent: "flex-end"
+  },
+
+  backGround: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    
+  },
+
+  logo: {
+    width: 120,
+    height: 100,
+    padding:20,
+    margin:10,
+    position: "absolute",
+ 
+
+  },
+
+  logoBox: {
+    position: "absolute",
+    top: 40,
+    alignItems: "center",
+    left: 50
   }
 });
